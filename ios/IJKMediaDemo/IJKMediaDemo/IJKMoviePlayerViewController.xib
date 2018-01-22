@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IJKVideoViewController">
+            <connections>
+                <outlet property="mediaControl" destination="6" id="24"/>
+                <outlet property="orientationButton" destination="al6-2c-XGx" id="1uW-3e-Syu"/>
+                <outlet property="saturationSlider" destination="V1z-aD-nm5" id="wKh-id-7ir"/>
+                <outlet property="view" destination="1" id="53"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <view contentMode="scaleToFill" id="6" customClass="IJKMediaControl">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" id="54" userLabel="Overlay" customClass="UIControl">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                    <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" id="4ZI-0o-F2w">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <barButtonItem title="结束" id="1XF-Pk-v6Z" userLabel="退出">
+                                    <connections>
+                                        <action selector="onClickDone:" destination="-1" id="Lbg-xk-WzB"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="flexibleSpace" id="pST-nN-ULY"/>
+                                <barButtonItem title="状态 Off" id="hpK-Ob-7Cx">
+                                    <connections>
+                                        <action selector="onClickHUD:" destination="-1" id="xtO-DF-OuD"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <view contentMode="scaleToFill" misplaced="YES" id="38" userLabel="Panel: Bottom">
+                            <rect key="frame" x="34" y="200" width="438" height="100"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="player_bottom_control_bg.png" id="39" userLabel="View: Background">
+                                    <rect key="frame" x="-31" y="0.0" width="474" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="41" userLabel="Button: Pause">
+                                    <rect key="frame" x="17" y="1" width="60" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="btn_player_pause.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickPause:" destination="-1" eventType="touchUpInside" id="46"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="40" userLabel="Button: Play">
+                                    <rect key="frame" x="17" y="1" width="60" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="btn_player_play.png">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickPlay:" destination="-1" eventType="touchUpInside" id="45"/>
+                                    </connections>
+                                </button>
+                                <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" id="42" userLabel="Slider: Video Progress">
+                                    <rect key="frame" x="34" y="57" width="336" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <connections>
+                                        <action selector="didSliderTouchCancel" destination="-1" eventType="touchCancel" id="uRn-za-g7e"/>
+                                        <action selector="didSliderTouchDown" destination="-1" eventType="touchDown" id="H8O-Ig-c5b"/>
+                                        <action selector="didSliderTouchUpInside" destination="-1" eventType="touchUpInside" id="vLS-zl-CBo"/>
+                                        <action selector="didSliderTouchUpOutside" destination="-1" eventType="touchUpOutside" id="sT2-dJ-Ff0"/>
+                                        <action selector="didSliderValueChanged" destination="-1" eventType="valueChanged" id="d2y-5f-s9f"/>
+                                    </connections>
+                                </slider>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="al6-2c-XGx">
+                                    <rect key="frame" x="103" y="11" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="onClinkOrientation:" destination="-1" eventType="touchUpInside" id="26S-9H-9k1"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="10:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="43" userLabel="Label: Current Time">
+                                    <rect key="frame" x="-14" y="61" width="50" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="20:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="44" userLabel="Label: Total Duration">
+                                    <rect key="frame" x="376" y="61" width="50" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="3Cx-Gy-euo">
+                            <rect key="frame" x="-49" y="113" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <action selector="lightnessChange:" destination="6" eventType="valueChanged" id="EQt-KN-98s"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="V1z-aD-nm5">
+                            <rect key="frame" x="387" y="113" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <action selector="saturationChange:" destination="-1" eventType="valueChanged" id="Z9b-hR-xkT"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="onClickOverlay:" destination="-1" eventType="touchDown" id="58"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <action selector="onClickMediaControl:" destination="-1" eventType="touchDown" id="59"/>
+                <outlet property="bottomPanel" destination="38" id="50"/>
+                <outlet property="currentTimeLabel" destination="43" id="60"/>
+                <outlet property="lightnessSlider" destination="3Cx-Gy-euo" id="Whl-p2-lfy"/>
+                <outlet property="mediaProgressSlider" destination="42" id="64"/>
+                <outlet property="overlayPanel" destination="54" id="106"/>
+                <outlet property="pauseButton" destination="41" id="65"/>
+                <outlet property="playButton" destination="40" id="66"/>
+                <outlet property="topPanel" destination="4ZI-0o-F2w" id="igp-Gq-Qk0"/>
+                <outlet property="totalDurationLabel" destination="44" id="63"/>
+            </connections>
+            <point key="canvasLocation" x="36" y="422"/>
+        </view>
+        <navigationItem title="Title" id="wNK-Og-f4q"/>
+    </objects>
+    <resources>
+        <image name="btn_player_pause.png" width="36" height="37"/>
+        <image name="btn_player_play.png" width="36" height="36"/>
+        <image name="player_bottom_control_bg.png" width="400" height="100"/>
+    </resources>
+</document>
